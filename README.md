@@ -7,9 +7,9 @@ Projeto desenvolvido com o objetivo de re-implementar os endpoints beseados na [
 | # | Para que |
 |:-:|:-|
 | [Java 8](https://www.java.com/pt_BR/download/faq/java8.xml) | Linguagem de programação que a aplicação foi construída |
-| [Docker](https://www.docker.com) | Ferramente de container qual a aplicação é empacotada e executada |
+| [Docker](https://www.docker.com) | Ferramenta de container que a aplicação é empacotada e executada |
 | [Lombok](https://projectlombok.org) | Ferramenta utilitária para geração de código em Java com foco em diminuir o boilerplate |
-| [Spring Boot](https://spring.io/projects/spring-boot) | Framework base em qual a aplicação foi construída e projetada |
+| [Spring Boot](https://spring.io/projects/spring-boot) | Framework base em que a aplicação foi construída e projetada |
 | [Spring Fox](http://springfox.github.io/springfox/) | Ferramenta para geração da documentação da api Rest com Swagger, que funciona integrada com Spring Boot |
 | [H2 Database Engine](https://www.h2database.com/html/main.html) | H2 é um sistema de gerenciamento de banco de dados relacional escrito em Java que pode ser incorporado em aplicativos Java ou executado no modo cliente-servidor |
 | [Swagger](https://swagger.io) | Tecnologia utilizada para documentação das api’s Rest  |
