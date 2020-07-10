@@ -1,6 +1,7 @@
 package com.desafioOlimar.marvelAPI.controller;
 
 import com.desafioOlimar.marvelAPI.model.*;
+import com.desafioOlimar.marvelAPI.model.Character;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -45,79 +46,79 @@ public class CharacterControllerTests {
 
     @Test
     public void testReturnListCharactersStatusOk() throws Exception {
-        ResponseEntity<List<CharacterModel>> response = restTemplate.exchange(
-                BASE_URI, HttpMethod.GET, null, new ParameterizedTypeReference<List<CharacterModel>>() {
+        ResponseEntity<List<Character>> response = restTemplate.exchange(
+                BASE_URI, HttpMethod.GET, null, new ParameterizedTypeReference<List<Character>>() {
                 });
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.OK);
     }
 
     @Test
     public void testReturnCharacterByIdStatusOk() throws Exception {
-        ResponseEntity<CharacterModel> response = restTemplate.exchange(
-                BASE_URI.concat(VALID_URI), HttpMethod.GET, null, new ParameterizedTypeReference<CharacterModel>() {});
+        ResponseEntity<Character> response = restTemplate.exchange(
+                BASE_URI.concat(VALID_URI), HttpMethod.GET, null, new ParameterizedTypeReference<Character>() {});
         assertThat(response.getBody().getName()).isEqualToIgnoringCase(VALID_NAME);
     }
 
     @Test
     public void testReturnListCharactersStatusNotFound() throws Exception {
-        ResponseEntity<CharacterModel> response = restTemplate.exchange(
-                BASE_URI.concat(INVALID_URI), HttpMethod.GET, null, new ParameterizedTypeReference<CharacterModel>() {});
+        ResponseEntity response = restTemplate.exchange(
+                BASE_URI.concat(INVALID_URI), HttpMethod.GET, null, new ParameterizedTypeReference<String>() {});
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
     @Test
     public void testReturnListComicsStatusOk() throws Exception {
-        ResponseEntity<List<ComicModel>> response = restTemplate.exchange(
-                BASE_URI.concat(VALID_COMIC), HttpMethod.GET, null, new ParameterizedTypeReference<List<ComicModel>>() {});
+        ResponseEntity<List<Comic>> response = restTemplate.exchange(
+                BASE_URI.concat(VALID_COMIC), HttpMethod.GET, null, new ParameterizedTypeReference<List<Comic>>() {});
         assertThat(response.getBody().get(0).getTitle()).isEqualToIgnoringCase(VALID_COMIC_TITLE);
     }
 
     @Test
     public void testReturnListComicsStatusNotFound() throws Exception {
-        ResponseEntity<List<ComicModel>> response = restTemplate.exchange(
-                BASE_URI.concat(INVALID_COMIC), HttpMethod.GET, null, new ParameterizedTypeReference<List<ComicModel>>() {});
+        ResponseEntity response = restTemplate.exchange(
+                BASE_URI.concat(INVALID_COMIC), HttpMethod.GET, null, new ParameterizedTypeReference<String>() {});
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
     @Test
     public void testReturnListEventsStatusOk() throws Exception {
-        ResponseEntity<List<EventModel>> response = restTemplate.exchange(
-                BASE_URI.concat(VALID_EVENT), HttpMethod.GET, null, new ParameterizedTypeReference<List<EventModel>>() {});
+        ResponseEntity<List<Event>> response = restTemplate.exchange(
+                BASE_URI.concat(VALID_EVENT), HttpMethod.GET, null, new ParameterizedTypeReference<List<Event>>() {});
         assertThat(response.getBody().get(0).getTitle()).isEqualToIgnoringCase(VALID_EVENT_TITLE);
     }
 
     @Test
     public void testReturnListEventsStatusNotFound() throws Exception {
-        ResponseEntity<List<EventModel>> response = restTemplate.exchange(
-                BASE_URI.concat(INVALID_EVENT), HttpMethod.GET, null, new ParameterizedTypeReference<List<EventModel>>() {});
+        ResponseEntity response = restTemplate.exchange(
+                BASE_URI.concat(INVALID_EVENT), HttpMethod.GET, null, new ParameterizedTypeReference<String>() {});
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
     @Test
     public void testReturnListSeriesStatusOk() throws Exception {
-        ResponseEntity<List<SerieModel>> response = restTemplate.exchange(
-                BASE_URI.concat(VALID_SERIES), HttpMethod.GET, null, new ParameterizedTypeReference<List<SerieModel>>() {});
+        ResponseEntity<List<Serie>> response = restTemplate.exchange(
+                BASE_URI.concat(VALID_SERIES), HttpMethod.GET, null, new ParameterizedTypeReference<List<Serie>>() {});
         assertThat(response.getBody().get(0).getTitle()).isEqualToIgnoringCase(VALID_SERIES_TITLE);
     }
 
     @Test
     public void testReturnListSeriesStatusNotFound() throws Exception {
-        ResponseEntity<List<SerieModel>> response = restTemplate.exchange(
-                BASE_URI.concat(INVALID_SERIES), HttpMethod.GET, null, new ParameterizedTypeReference<List<SerieModel>>() {});
+        ResponseEntity response = restTemplate.exchange(
+                BASE_URI.concat(INVALID_SERIES), HttpMethod.GET, null, new ParameterizedTypeReference<String>() {});
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 
     @Test
     public void testReturnListStoriesStatusOk() throws Exception {
-        ResponseEntity<List<StoryModel>> response = restTemplate.exchange(
-                BASE_URI.concat(VALID_STORY), HttpMethod.GET, null, new ParameterizedTypeReference<List<StoryModel>>() {});
+        ResponseEntity<List<Story>> response = restTemplate.exchange(
+                BASE_URI.concat(VALID_STORY), HttpMethod.GET, null, new ParameterizedTypeReference<List<Story>>() {});
         assertThat(response.getBody().get(0).getTitle()).isEqualToIgnoringCase(VALID_STORIES_TITLE);
     }
 
     @Test
     public void testReturnListStoriesStatusNotFound() throws Exception {
-        ResponseEntity<List<StoryModel>> response = restTemplate.exchange(
-                BASE_URI.concat(INVALID_STORY), HttpMethod.GET, null, new ParameterizedTypeReference<List<StoryModel>>() {});
+        ResponseEntity response = restTemplate.exchange(
+                BASE_URI.concat(INVALID_STORY), HttpMethod.GET, null, new ParameterizedTypeReference<String>() {});
         assertThat(response.getStatusCode()).isEqualTo(HttpStatus.NOT_FOUND);
     }
 

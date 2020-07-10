@@ -1,6 +1,6 @@
 package com.desafioOlimar.marvelAPI.service;
 
-import com.desafioOlimar.marvelAPI.model.CharacterModel;
+import com.desafioOlimar.marvelAPI.model.Character;
 import com.desafioOlimar.marvelAPI.service.api.CharacterService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,15 +23,10 @@ public class CharacterServiceTests {
     @Autowired
     private CharacterService service;
 
-    @Autowired
-    private CharacterModel character;
-
-    @Autowired
-    private List<CharacterModel> listCharacters;
 
     @Test
     void testReturnValidCharacter() {
-        character = service.findById(VALID_CHARACTER);
+        Character character = service.findById(VALID_CHARACTER);
         assertThat(character.getName()).isEqualToIgnoringCase(VALID_NAME_CHARACTER);
     }
 
@@ -44,7 +39,7 @@ public class CharacterServiceTests {
 
     @Test
     void testReturnAllCharacters() {
-        listCharacters = service.findAll();
+        List<Character> listCharacters = service.findAll();
         assertThat(listCharacters.size()).isEqualTo(ALL_CHARACTERS);
     }
 }

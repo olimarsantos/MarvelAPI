@@ -10,9 +10,8 @@ import java.util.Date;
 
 @Data
 @Entity
-@Component
 @Table(name = "STORY")
-public class StoryModel implements Serializable {
+public class Story implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

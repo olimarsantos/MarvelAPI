@@ -9,9 +9,8 @@ import java.util.Date;
 
 @Data
 @Entity
-@Component
-@Table(name = "SERIE")
-public class SerieModel implements Serializable {
+@Table(name = "EVENT")
+public class Event implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -29,15 +28,11 @@ public class SerieModel implements Serializable {
     private String resourceURI;
 
     @Column
-    private Integer startYear;
-
-    @Column
-    private Integer endYear;
-
-    @Column
-    private String rating;
-
-    @Column
-    @Temporal(TemporalType.TIMESTAMP)
     private Date modified;
+
+    @Column
+    private Date start;
+
+    @Column
+    private Date end;
 }

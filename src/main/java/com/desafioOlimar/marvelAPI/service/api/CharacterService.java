@@ -1,12 +1,12 @@
 package com.desafioOlimar.marvelAPI.service.api;
 
-import com.desafioOlimar.marvelAPI.model.CharacterModel;
+import com.desafioOlimar.marvelAPI.model.Character;
 
 import java.util.List;
 
 public interface CharacterService {
 
-    List<CharacterModel> findAll();
+    List<Character> findAll();
 
-    CharacterModel findById(Integer id);
+    Character findById(Integer id);
 }

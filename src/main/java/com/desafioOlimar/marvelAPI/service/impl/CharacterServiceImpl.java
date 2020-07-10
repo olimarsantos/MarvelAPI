@@ -1,6 +1,6 @@
 package com.desafioOlimar.marvelAPI.service.impl;
 
-import com.desafioOlimar.marvelAPI.model.CharacterModel;
+import com.desafioOlimar.marvelAPI.model.Character;
 import com.desafioOlimar.marvelAPI.repository.CharacterRepository;
 import com.desafioOlimar.marvelAPI.service.api.CharacterService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,15 +19,15 @@ public class CharacterServiceImpl implements CharacterService {
     private CharacterRepository repository;
 
     @Autowired
-    private Optional<CharacterModel> character;
+    private Optional<Character> character;
 
     @Override
-    public List<CharacterModel> findAll() {
+    public List<Character> findAll() {
         return repository.findAll();
     }
 
     @Override
-    public CharacterModel findById(Integer id) {
+    public Character findById(Integer id) {
         character = repository.findById(id);
         if (character.isPresent()) {
             return character.get();

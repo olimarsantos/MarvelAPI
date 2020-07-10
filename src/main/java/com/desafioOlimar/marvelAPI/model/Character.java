@@ -2,7 +2,6 @@ package com.desafioOlimar.marvelAPI.model;
 
 import lombok.Data;
 import org.springframework.context.annotation.Lazy;
-import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -10,10 +9,9 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Component
 @Data
 @Table(name = "CHARACTERS")
-public class CharacterModel implements Serializable {
+public class Character implements Serializable {
 
     private static final long serialVersionID = 1l;
 
@@ -44,26 +42,26 @@ public class CharacterModel implements Serializable {
             joinColumns = @JoinColumn(name = "character_id"),
             inverseJoinColumns = @JoinColumn(name = "comic_id"))
     @Lazy
-    private List<ComicModel> comics;
+    private List<Comic> comics;
 
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinTable(name = "CHARACTERS_EVENT",
             joinColumns = @JoinColumn(name = "character_id"),
             inverseJoinColumns = @JoinColumn(name = "event_id"))
     @Lazy
-    private List<EventModel> events;
+    private List<Event> events;
 
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinTable(name = "CHARACTERS_SERIE",
             joinColumns = @JoinColumn(name = "character_id"),
             inverseJoinColumns = @JoinColumn(name = "serie_id"))
     @Lazy
-    private List<SerieModel> series;
+    private List<Serie> series;
 
     @ManyToMany(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinTable(name = "CHARACTERS_STORY",
             joinColumns = @JoinColumn(name = "character_id"),
             inverseJoinColumns = @JoinColumn(name = "story_id"))
     @Lazy
-    private List<StoryModel> stories;
+    private List<Story> stories;
 }

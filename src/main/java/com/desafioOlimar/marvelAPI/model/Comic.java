@@ -9,10 +9,9 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 @Entity
-@Component
 @Data
 @Table(name = "COMIC")
-public class ComicModel implements Serializable {
+public class Comic implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
