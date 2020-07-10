@@ -71,3 +71,7 @@ mvn package
 #     docker run -p 9003:9003 marvel-api-olimar:latest
 
 ```
+
+#### Swagger
+
+A documentação da API pode ser acessada via Swagger, disponível atráves do link `http://localhost:9003/swagger-ui.html`.
