@@ -6,7 +6,7 @@ Projeto desenvolvido com o objetivo de re-implementar os endpoints beseados na [
 
 | # | Para que |
 |:-:|:-|
-| [Java 8](https://www.java.com/pt_BR/download/faq/java8.xml) | Linguagem de programação qual a aplicação foi construída |
+| [Java 8](https://www.java.com/pt_BR/download/faq/java8.xml) | Linguagem de programação que a aplicação foi construída |
 | [Docker](https://www.docker.com) | Ferramente de container qual a aplicação é empacotada e executada |
 | [Lombok](https://projectlombok.org) | Ferramenta utilitária para geração de código em Java com foco em diminuir o boilerplate |
 | [Spring Boot](https://spring.io/projects/spring-boot) | Framework base em qual a aplicação foi construída e projetada |
